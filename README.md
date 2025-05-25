@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 # Social Network Backend
 
 Este é um backend de rede social similar ao X (antigo Twitter) desenvolvido em Java com Spring Boot.
@@ -73,3 +74,7 @@ O projeto utiliza H2 Database em memória para desenvolvimento. Para produção,
 3. Commit suas mudanças (`git commit -m 'Adiciona nova feature'`)
 4. Push para a branch (`git push origin feature/nova-feature`)
 5. Abra um Pull Request
+=======
+# Projeto-IVA
+Projeto Integrador IV-A - Análise e Desenvolvimento de Sistemas (PUC Goiás) 2025/1
+>>>>>>> f87527eff1ce98da4ac7fe218a5bd701f5ad8994
