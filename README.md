@@ -68,12 +68,22 @@ O projeto está dividido em três módulos principais:
 O projeto utiliza H2 Database em memória para desenvolvimento. Para produção, recomenda-se configurar um banco de dados mais robusto como PostgreSQL ou MySQL.
 
 ## Contribuição
+### Lembre-se: utilize a boa prática de commits atômicos, criando uma branch para cada funcionalidade e/ou correção de erros que for implementada.
 
 1. Faça um fork do projeto
-2. Crie uma branch para sua feature (`git checkout -b feature/nova-feature`)
-3. Commit suas mudanças (`git commit -m 'Adiciona nova feature'`)
-4. Push para a branch (`git push origin feature/nova-feature`)
-5. Abra um Pull Request
+2. Clone o repositório para o seu computador (`git clone <url_do_repositorio>`)
+3. Entre na main branch (`git checkout main`)
+4. Atualize a main branch do repositório antes de iniciar (`git pull origin main`)
+5. Crie uma branch para sua feature e mude para ela (`git checkout -b feature/sua-feature`)
+6. Prepare suas mudanças (`git add .`)
+7. Commit suas mudanças com uma boa descrição (`git commit -m 'Descrição`)
+8. Mude para a main branch novamente (`git checkout main`)
+9. Atualize-a novamente para evitar possíveis conflitos (`git pull origin main`)
+10. Mude para a sua branch novamente (`git checkout feature/sua-feature`)
+11. Faça o merge da main branch com a sua branch (`git rebase main`)
+12. Push para a branch (`git push origin feature/sua-feature`)
+13. Abra um Pull Request e atualize o status da task para "In Review" no JIRA
+
 =======
 # Projeto-IVA
 Projeto Integrador IV-A - Análise e Desenvolvimento de Sistemas (PUC Goiás) 2025/1
