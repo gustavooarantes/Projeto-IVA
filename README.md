@@ -71,7 +71,7 @@ O projeto utiliza H2 Database em memória para desenvolvimento. Para produção,
 ### Lembre-se: utilize a boa prática de commits atômicos, criando uma branch para cada funcionalidade e/ou correção de erros que for implementada.
 
 1. Faça um fork do projeto
-2. Clone o repositório para o seu computador (`git clone <url_do_repositorio>`)
+2. Clone o repositório para o seu computador (`git clone <url_do_fork>`)
 3. Entre na main branch (`git checkout main`)
 4. Atualize a main branch do repositório antes de iniciar (`git pull origin main`)
 5. Crie uma branch para sua feature e mude para ela (`git checkout -b feature/sua-feature`)
