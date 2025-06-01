@@ -13,6 +13,9 @@
         <module>user-service</module>
         <module>auth-service</module>
         <module>common</module>
+        <module>contract-service</module>
+        <module>message-service</module>
+        <module>user-service</module>
     </modules>
 
     <properties>
