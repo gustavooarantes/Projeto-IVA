@@ -1,25 +1,32 @@
-<<<<<<< HEAD
 # Social Network Backend
 
 Este é um backend de rede social similar ao X (antigo Twitter) desenvolvido em Java com Spring Boot.
+
+## Desenvolvedores
+Gustavo Oliveira Arantes, Leandro Carrijo, Luciana Freitas e Beatriz Freitas
 
 ## Tecnologias Utilizadas
 
 - Java 17
 - Spring Boot 3.2.3
 - Spring Security
+- Spring Data JPA
+- Spring Starter AMQP (para RabbitMQ)
 - JWT para autenticação
 - H2 Database (para desenvolvimento)
 - Maven
 - Lombok
+- Devtools
 
 ## Estrutura do Projeto
 
-O projeto está dividido em três módulos principais:
+O projeto está dividido em 5 módulos principais:
 
 1. `common`: Contém entidades e utilitários compartilhados
 2. `auth-service`: Gerencia autenticação e autorização
 3. `user-service`: Gerencia operações relacionadas a usuários
+4. `message-service`: Gerencia as configurações, segurança e endpoints referentes ao producer e consumer das mensagens
+5. `contract-service`: DTO para garantir baixo acoplamento entre os serviços Producer e Consumer
 
 ## Funcionalidades
 
@@ -29,6 +36,7 @@ O projeto está dividido em três módulos principais:
 - Perfil de usuário
 - Busca de usuários
 - Edição de informações do usuário
+- Serviço de Mensagens entre usuários
 
 ## Configuração
 
@@ -54,6 +62,12 @@ O projeto está dividido em três módulos principais:
 - `GET /api/users/search`: Buscar usuários por nome ou username
 - `PUT /api/users/{id}`: Atualizar informações do usuário
 - `DELETE /api/users/{id}`: Deletar usuário
+
+### Mensagens
+- `POST /api/messages`: Envia mensagens para o RabbitMQ
+- `GET /api/messages/chat/{user1}/{user2}`: Busca o chat entttre os dois usuários
+- `RabbitMQ`: uso de exhanges e rounting keys para controle e direcionamento correto de mensagens nas filas.
+- `SecurityConfig`: proteção contra CSRF e exigência de autenticação para enviar as requisições HTTP destes serviços especificamente estão desativadas.
 
 ## Segurança
 
