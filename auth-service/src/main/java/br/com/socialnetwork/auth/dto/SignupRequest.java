@@ -22,4 +22,11 @@ public class SignupRequest {
     
     @NotBlank(message = "O nome completo é obrigatório")
     private String fullName;
-} 
+
+    public SignupRequest(String user, String mail, String password, String testUser) {
+        this.username = user;
+        this.email = mail;
+        this.password = password;
+        this.fullName = testUser;
+    }
+}
