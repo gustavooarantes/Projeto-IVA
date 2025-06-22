@@ -16,6 +16,13 @@ public class PrivateMessage {
 
     public PrivateMessage() {}
 
+    public PrivateMessage(String senderId, String consumerId, String content, LocalDateTime timestamp) {
+        this.senderId = senderId;
+        this.consumerId = consumerId;
+        this.content = content;
+        this.timestamp = timestamp;
+    }
+
     public Long getId() { return id; }
     public void setId(Long id) { this.id = id; }
 

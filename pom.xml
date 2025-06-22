@@ -10,7 +10,6 @@
     <packaging>pom</packaging>
 
     <modules>
-        <module>user-service</module>
         <module>auth-service</module>
         <module>common</module>
         <module>contract-service</module>
@@ -23,6 +22,8 @@
         <spring.boot.version>3.2.3</spring.boot.version>
         <spring.security.version>6.2.3</spring.security.version>
         <jwt.version>0.11.5</jwt.version>
+        <maven.compiler.source>17</maven.compiler.source>
+        <maven.compiler.target>17</maven.compiler.target>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
     </properties>
@@ -43,7 +44,7 @@
         <dependency>
             <groupId>org.projectlombok</groupId>
             <artifactId>lombok</artifactId>
-            <optional>true</optional>
+            <scope>provided</scope>
         </dependency>
         <dependency>
             <groupId>org.springframework.boot</groupId>

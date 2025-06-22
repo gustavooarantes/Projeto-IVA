@@ -27,7 +27,6 @@ public class MessageController {
     // Envia mensagem para o RabbitMQ
     @PostMapping
     public MessageDTO sendMessage(@Valid @RequestBody MessageDTO messageDTO) {
-        // Guarantee timestamp is never null (for backend-side messages)
         if (messageDTO.getTimestamp() == null) {
             messageDTO.setTimestamp(LocalDateTime.now());
         }

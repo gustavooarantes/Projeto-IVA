@@ -7,10 +7,14 @@ import com.projetointegradoriva.message_service.Producer.MessageProducer;
 import com.projetointegradoriva.message_service.Repository.PrivateMessageRepository;
 import org.junit.jupiter.api.Test;
 import org.mockito.Mockito;
+import org.springframework.context.annotation.Import;
+import org.springframework.security.test.context.support.WithMockUser;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.autoconfigure.web.servlet.WebMvcTest;
-import org.springframework.boot.test.mock.mockito.MockBean;
+import org.springframework.boot.test.mock.mockito.*;
 import org.springframework.http.MediaType;
+import org.springframework.test.web.servlet.MockMvc;
+import static org.springframework.security.test.web.servlet.request.SecurityMockMvcRequestPostProcessors.csrf;
 import org.springframework.test.web.servlet.MockMvc;
 
 import java.time.LocalDateTime;
@@ -22,6 +26,7 @@ import static org.springframework.test.web.servlet.request.MockMvcRequestBuilder
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.*;
 
 @WebMvcTest(MessageController.class)
+@Import(TestSecurityConfig.class)
 public class MessageControllerTest {
 
     @Autowired
@@ -37,6 +42,7 @@ public class MessageControllerTest {
     private ObjectMapper objectMapper;
 
     @Test
+    @WithMockUser
     public void testSendMessage() throws Exception {
         MessageDTO dto = new MessageDTO("user1", "user2", "Olá!", null);
 
@@ -52,6 +58,7 @@ public class MessageControllerTest {
     }
 
     @Test
+    @WithMockUser
     public void testGetChat() throws Exception {
         PrivateMessage msg1 = new PrivateMessage("user1", "user2", "Oi!", LocalDateTime.now());
         PrivateMessage msg2 = new PrivateMessage("user2", "user1", "Olá!", LocalDateTime.now());
