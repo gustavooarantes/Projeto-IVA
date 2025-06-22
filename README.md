@@ -8,8 +8,9 @@ Gustavo Oliveira Arantes, Leandro Carrijo, Luciana Freitas e Beatriz Freitas
 ## Tecnologias Utilizadas
 
 - Java 17
+- Mockito (para testes unitários)
 - Spring Boot 3.2.3
-- Spring Security
+- Spring Security e Security Test
 - Spring Data JPA
 - Spring Starter AMQP (para RabbitMQ)
 - JWT para autenticação
@@ -76,6 +77,9 @@ O projeto está dividido em 5 módulos principais:
 - Proteção contra CSRF
 - Validação de dados
 - Controle de acesso baseado em roles
+
+## Testes
+Os testes unitários foram implementados (em quase sua totalidade) utilizando Mockito para testes de cenários. Nenhum erro foi retornado (possível verificar isto ao executar o comando `mvn clean install` no diretório pai do projeto.
 
 ## Banco de Dados
 
